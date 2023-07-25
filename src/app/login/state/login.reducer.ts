@@ -12,8 +12,15 @@ export const initialState: AuthState = {
   loggedIn: false,
   error: '',
   user: {
+    id: 0,
     username: '',
     password: '',
+    email: '',
+    firstName: '',
+    lastName: '',
+    gender: '',
+    image: '',
+    token: '',
   },
 };
 
@@ -35,10 +42,7 @@ export const loginReducer = createReducer(
   on(LoginActions.LOGOUT, (state) => ({
     ...state,
     loggedIn: false,
-    user: {
-      username: '',
-      password: '',
-    },
+    user: initialState.user,
     error: '',
   }))
 );
