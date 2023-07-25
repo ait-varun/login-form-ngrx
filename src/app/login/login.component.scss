@@ -13,6 +13,7 @@ $font-family: "Roboto", sans-serif;
   background: #ff5722;
   color: $fontcolor;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 @mixin message($fontcolor: #90a4ae) {
@@ -78,5 +79,22 @@ body {
 }
 
 .form .register-form {
+  display: none;
+}
+
+input.is-invalid {
+  border-color: red;
+}
+
+p.hint {
+  color: gray;
+  font-style: italic;
+}
+
+.show-hint {
+  display: block;
+}
+
+.hide-hint {
   display: none;
 }
