@@ -16,8 +16,7 @@ import { User } from '../models/login';
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.scss'],
 })
-export class HomepageComponent implements OnInit {
-  userName = '';
+export class HomepageComponent {
   isLoggedIn$: Observable<boolean>;
   userName$: Observable<any>;
   user$: Observable<User>;
@@ -29,14 +28,6 @@ export class HomepageComponent implements OnInit {
     this.isLoggedIn$ = this.store.select(selectLoggedIn);
     this.user$ = this.store.select(selectUser);
     this.userName$ = this.store.select(selectUserName);
-  }
-
-  ngOnInit() {
-    const storedUser = localStorage.getItem('userData');
-    if (storedUser) {
-      const user = JSON.parse(storedUser);
-      this.store.dispatch(LoginActions.LOGIN_SUCCESS({ user }));
-    }
   }
 
   onLogout() {
