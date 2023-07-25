@@ -1,9 +1,9 @@
-<ng-container *ngIf="logOut">
-  <p>Hi {{ userName }}</p>
+<ng-container *ngIf="isLoggedIn$ | async as isLoggedIn; else notLoggedIn">
+  <p>Hi {{ user$ | async }}</p>
   <button (click)="onLogout()">Logout</button>
 </ng-container>
 
-<ng-container *ngIf="!logOut">
+<ng-template #notLoggedIn>
   <p>Go to Login Page</p>
   <button routerLink="/">LogIn</button>
-</ng-container>
+</ng-template>
