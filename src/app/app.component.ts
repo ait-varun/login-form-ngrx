@@ -1,6 +1,6 @@
 import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
-import { LOGIN_SUCCESS } from './login/state/login.action';
+import { LOGIN_SUCCESS } from './Store/actions/login.action';
 
 @Component({
   selector: 'app-root',

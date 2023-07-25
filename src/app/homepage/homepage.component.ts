@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
-import { AuthState } from '../login/state/login.reducer';
-import * as LoginActions from '../login/state/login.action';
+import { AuthState } from '../Store/reducers/login.reducer';
+import * as LoginActions from '../Store/actions/login.action';
 import {
   selectLoggedIn,
   selectUser,
   selectUserName,
-} from '../login/state/login.selector';
+} from '../Store/selectors/login.selector';
 import { Observable } from 'rxjs';
-import { User } from '../models/login.models';
+import { User } from '../Store/models/login.models';
 
 @Component({
   selector: 'app-homepage',

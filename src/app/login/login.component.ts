@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import * as LoginActions from './state/login.action';
-import { AuthState } from './state/login.reducer';
+import * as LoginActions from '../Store/actions/login.action';
+import { AuthState } from '../Store/reducers/login.reducer';
 import { Store, select } from '@ngrx/store';
 import {
   selectError,
   selectLoggedIn,
   selectUser,
-} from './state/login.selector';
+} from '../Store/selectors/login.selector';
 import { Observable, filter, take } from 'rxjs';
 
 @Component({

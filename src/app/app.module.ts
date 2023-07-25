@@ -11,8 +11,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 // npm install @ngrx/store-devtools --save
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { loginReducer } from './login/state/login.reducer';
-import { LoginEffects } from './login/state/login.effects';
+import { loginReducer } from './Store/reducers/login.reducer';
+import { LoginEffects } from './Store/effects/login.effects';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, HomepageComponent],
