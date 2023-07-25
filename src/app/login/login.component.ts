@@ -9,7 +9,7 @@ import {
   selectLoggedIn,
   selectUser,
 } from './state/login.selector';
-import { Observable, filter, switchMap, take } from 'rxjs';
+import { Observable, filter, take } from 'rxjs';
 
 @Component({
   selector: 'app-login',

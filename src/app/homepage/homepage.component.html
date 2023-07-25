@@ -1,11 +1,14 @@
 <ng-container *ngIf="isLoggedIn$ | async as isLoggedIn; else notLoggedIn">
-  <p>Hi {{ userName$ | async }}</p>
-  <div>Your Id is :{{ (user$ | async)?.id }}</div>
-
-  <button (click)="onLogout()">Logout</button>
+  <div class="container">
+    <p>Hi {{ userName$ | async }}</p>
+    <div>Your Id is :{{ (user$ | async)?.id }}</div>
+    <button (click)="onLogout()">Logout</button>
+  </div>
 </ng-container>
 
 <ng-template #notLoggedIn>
-  <p>Go to Login Page</p>
-  <button routerLink="/">LogIn</button>
+  <div class="container">
+    <p>Go to Login Page</p>
+    <button routerLink="/">LogIn</button>
+  </div>
 </ng-template>
