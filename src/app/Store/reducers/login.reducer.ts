@@ -1,6 +1,6 @@
 import { createReducer, on } from '@ngrx/store';
 import * as LoginActions from '../actions/login.action';
-import { User } from 'src/app/Store/models/login.models';
+import { User } from 'src/app/models/login.models';
 
 export interface AuthState {
   loggedIn: boolean;

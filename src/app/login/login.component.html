@@ -10,6 +10,16 @@
           'is-invalid': submitted && formControls['username'].errors
         }"
       />
+      <p
+        class="hint"
+        [hidden]="formControls['username'].value || submitted"
+        [ngClass]="{
+          'show-hint': !formControls['username'].value && !submitted,
+          'hide-hint': formControls['username'].value || submitted
+        }"
+      >
+        Hint: kminchelle
+      </p>
       <div *ngIf="submitted && formControls['username'].errors" class="error">
         <div *ngIf="formControls['username'].errors['required']">
           Username is required
@@ -21,9 +31,20 @@
         placeholder="Password"
         formControlName="password"
         [ngClass]="{
-          'is-invalid': submitted && formControls['password'].errors
+          'is-invalid': submitted && formControls['password'].errors,
         }"
       />
+
+      <p
+        class="hint"
+        [hidden]="formControls['password'].value || submitted"
+        [ngClass]="{
+          'show-hint': !formControls['password'].value && !submitted,
+          'hide-hint': formControls['password'].value || submitted
+        }"
+      >
+        Hint: 0lelplR
+      </p>
       <div *ngIf="submitted && formControls['password'].errors" class="error">
         <div *ngIf="formControls['password'].errors['required']">
           Password is required
@@ -34,7 +55,7 @@
       </div>
       <button type="submit" class="btn">Login</button>
       <p class="message">
-        Don't have an account?<a href="javascript:void(0)">Sign Up</a>
+        Already registered?<a href="javascript:void(0)"> Sign in</a>
       </p>
     </form>
   </div>

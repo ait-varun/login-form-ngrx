@@ -16,8 +16,4 @@ export class AuthService {
       password: password,
     });
   }
-
-  setUserInLocalStorage(user: User) {
-    localStorage.setItem('userData', JSON.stringify(user));
-  }
 }

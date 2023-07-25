@@ -13,6 +13,7 @@ $font-family: "Roboto", sans-serif;
   background: #ff5722;
   color: $fontcolor;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 @mixin message($fontcolor: #90a4ae) {
@@ -26,10 +27,10 @@ $font-family: "Roboto", sans-serif;
   font-family: $font-family;
   width: 100%;
   border: 0;
-  margin: 0 0 15px;
   padding: 15px;
   outline: 0;
   font-size: 15px;
+  margin: 5px 0px;
   text-align: center;
   box-sizing: border-box;
   background: $bkgnd;
@@ -78,5 +79,24 @@ body {
 }
 
 .form .register-form {
+  display: none;
+}
+
+.error {
+  color: rgb(207, 45, 45);
+  margin: 5px 0px;
+}
+
+p.hint {
+  color: gray;
+  font-style: italic;
+  margin: 5px 0px;
+}
+
+.show-hint {
+  display: block;
+}
+
+.hide-hint {
   display: none;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { AuthState } from '../Store/reducers/login.reducer';
@@ -9,7 +9,7 @@ import {
   selectUserName,
 } from '../Store/selectors/login.selector';
 import { Observable } from 'rxjs';
-import { User } from '../Store/models/login.models';
+import { User } from '../models/login.models';
 
 @Component({
   selector: 'app-homepage',
