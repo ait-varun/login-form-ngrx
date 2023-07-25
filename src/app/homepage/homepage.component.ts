@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { AuthState } from '../login/state/login.reducer';
 import * as LoginActions from '../login/state/login.action';
