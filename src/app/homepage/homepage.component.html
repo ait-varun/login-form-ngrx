@@ -1,5 +1,7 @@
 <ng-container *ngIf="isLoggedIn$ | async as isLoggedIn; else notLoggedIn">
   <p>Hi {{ userName$ | async }}</p>
+  <div>Your Id is :{{ (user$ | async)?.id }}</div>
+
   <button (click)="onLogout()">Logout</button>
 </ng-container>
 
