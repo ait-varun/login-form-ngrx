@@ -9,7 +9,7 @@ import {
   selectUserName,
 } from '../login/state/login.selector';
 import { Observable } from 'rxjs';
-import { User } from '../models/login';
+import { User } from '../models/login.models';
 
 @Component({
   selector: 'app-homepage',
