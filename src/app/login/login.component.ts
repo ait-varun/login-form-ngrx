@@ -64,12 +64,17 @@ export class LoginComponent implements OnInit {
     );
 
     this.isLoggedIn$
+      // .pipe(...): The pipe() function is used to chain multiple operators together. In this code, it's used to apply a series of operations on the isLoggedIn$ observable.
       .pipe(
+        // filter((value) => value): The filter() operator is used to filter the emitted values from the observable based on a condition. In this case, it filters out any "falsy" values (e.g., false, null, undefined, 0) and only allows "truthy" values to pass through. This means the code inside the .subscribe() function will only be executed when isLoggedIn$ emits a truthy value.
         filter((value) => value),
+        // take(1): The take() operator is used to take a specified number of values from the observable. In this case, take(1) means that only the first emitted value will be considered, and then the observable will automatically complete, unsubscribing from further emissions. This ensures that the subscription is automatically unsubscribed after the first emission, preventing memory leaks.
         take(1)
       )
       .subscribe((value) => {
+        // .subscribe((value) => { ... }): The subscribe() function is where you define the behavior that will be executed when the observable emits a value that passes through the filtering and taking operations.
         this.loginSuccess = value;
+        // (value) => { ... }: This is an arrow function that takes the emitted value from the observable as its argument. In this case, the emitted value will be a truthy value (since it passed through the filter).
         this.router.navigate(['/home']);
       });
 
