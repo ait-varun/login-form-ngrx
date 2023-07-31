@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { loginReducer } from './Store/reducers/login.reducer';
 import { LoginEffects } from './Store/effects/login.effects';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, HomepageComponent],
@@ -25,6 +27,12 @@ import { LoginEffects } from './Store/effects/login.effects';
     StoreModule.forRoot({ auth: loginReducer }, {}),
     EffectsModule.forRoot([LoginEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 2, logOnly: true }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      // registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
