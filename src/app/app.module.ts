@@ -15,9 +15,10 @@ import { loginReducer } from './Store/reducers/login.reducer';
 import { LoginEffects } from './Store/effects/login.effects';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from 'src/environments/environment';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomepageComponent],
+  declarations: [AppComponent, LoginComponent, HomepageComponent, UsersComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -28,10 +29,7 @@ import { environment } from 'src/environments/environment';
     EffectsModule.forRoot([LoginEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 2, logOnly: true }),
     ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
-      // registrationStrategy: 'registerWhenStable:30000'
+      enabled: environment.production
     }),
   ],
   providers: [],
