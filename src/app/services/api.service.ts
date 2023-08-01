@@ -7,7 +7,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class ApiService {
-  private apiUrl = 'https://jsonplaceholder.typicode.com/users'; // Replace this with your API endpoint
+  private apiUrl = 'https://jsonplaceholder.typicode.com/users'; 
 
   constructor(private http: HttpClient) {}
 

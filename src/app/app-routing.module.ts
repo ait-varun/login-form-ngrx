@@ -6,7 +6,7 @@ import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'login',
     component: LoginComponent,
   },
   {
@@ -14,7 +14,7 @@ const routes: Routes = [
     component: HomepageComponent,
   },
   {
-    path: 'users',
+    path: '',
     component: UsersComponent,
   },
 ];
