@@ -13,9 +13,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { loginReducer } from './Store/reducers/login.reducer';
 import { LoginEffects } from './Store/effects/login.effects';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomepageComponent],
+  declarations: [AppComponent, LoginComponent, HomepageComponent, UsersComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
