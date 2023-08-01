@@ -8,7 +8,7 @@ import { ApiService } from '../services/api.service';
   styleUrls: ['./users.component.scss'],
 })
 export class UsersComponent {
- data: any;
+ users: any;
 
   constructor(private apiService: ApiService) {}
 
@@ -20,7 +20,7 @@ export class UsersComponent {
     this.apiService.getData().subscribe(
       (response) => {
         // Handle the response from the API
-        this.data = response;
+        this.users = response;
       },
       (error) => {
         // Handle errors here if needed

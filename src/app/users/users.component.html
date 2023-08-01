@@ -1,5 +1,15 @@
-<div *ngIf="data">
-  <ol>
-    <li *ngFor="let item of data">{{ item.name }}</li>
-  </ol>
-</div>
+<table class="my-table" *ngIf="users">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Username</th>
+    <th>Email</th>
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{ user.id }}</td>
+    <td>{{user.name}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.email}}</td>
+  </tr>
+  <!-- Add more rows as needed -->
+</table>

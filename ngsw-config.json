@@ -11,7 +11,9 @@
           "/index.html",
           "/manifest.webmanifest",
           "/*.css",
-          "/*.ts"
+          "/*.ts",
+          "/*.scss",
+          "/*.js"
         ]
       }
     },
@@ -24,6 +26,21 @@
           "/assets/**",
           "/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
         ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "api-call ",
+      "urls": [
+        "https://jsonplaceholder.typicode.com/users",
+        "https://dummyjson.com/auth/login"
+      ],
+      "cacheConfig": {
+        "maxAge": "6h",
+        "maxSize": 10,
+        "strategy": "performance",
+        "timeout": "1s"
       }
     }
   ]
