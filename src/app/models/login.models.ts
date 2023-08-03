@@ -9,3 +9,9 @@ export interface User {
   image: string;
   token: string;
 }
+
+
+export interface LoginUser {
+  username: string;
+  password: string;
+}
