@@ -33,6 +33,6 @@ export class HomepageComponent {
   onLogout() {
     this.store.dispatch(LoginActions.LOGOUT());
     localStorage.removeItem('userData');
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
   }
 }
