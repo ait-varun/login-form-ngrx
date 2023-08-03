@@ -1,9 +1,9 @@
 import { createAction, props } from '@ngrx/store';
-import { User } from 'src/app/models/login.models';
+import { User, LoginUser } from 'src/app/models/login.models';
 
 export const LOGIN_START = createAction(
   '[Auth] Login Start',
-  props<{ username: string; password: string }>()
+  props<{ LoginUser: LoginUser }>()
 );
 
 export const LOGIN_SUCCESS = createAction(

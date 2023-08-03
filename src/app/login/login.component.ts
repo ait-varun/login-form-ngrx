@@ -10,6 +10,7 @@ import {
   selectUser,
 } from '../Store/selectors/login.selector';
 import { Observable, filter, take } from 'rxjs';
+import { LoginUser } from '../models/login.models';
 
 @Component({
   selector: 'app-login',
@@ -55,11 +56,13 @@ export class LoginComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-    const formData = this.form.getRawValue();
+    const formData: LoginUser = this.form.getRawValue();
     this.store.dispatch(
       LoginActions.LOGIN_START({
-        username: formData.username,
-        password: formData.password,
+        LoginUser: {
+          username: formData.username,
+          password: formData.password,
+        },
       })
     );
 

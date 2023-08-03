@@ -9,14 +9,14 @@ export class LoginEffects {
   login$ = createEffect(() =>
     this.actions$.pipe(
       ofType(LoginActions.LOGIN_START),
-      mergeMap(({ username, password }) => {
-        return this.authService.login(username, password).pipe(
+      mergeMap(({ LoginUser }) => {
+        return this.authService.login(LoginUser).pipe(
           map((user) => {
             localStorage.setItem('userData', JSON.stringify(user));
             return LoginActions.LOGIN_SUCCESS({ user });
           }),
           catchError((error) => {
-            return of(LoginActions.LOGIN_FAIL({ error }));
+            return of(LoginActions.LOGIN_FAIL({ error: error.message }));
           })
         );
       })
