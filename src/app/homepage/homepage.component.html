@@ -2,6 +2,8 @@
   <div class="container">
     <p>Hi {{ userName$ | async }}</p>
     <div>Your Id is :{{ (user$ | async)?.id }}</div>
+    <div>Your Full Name is :{{ (user$ | async)?.firstName }} {{ (user$ | async)?.lastName }}</div>
+    <div>Your User Name is :{{ (user$ | async)?.username }}</div>
     <img src="{{ (user$ | async)?.image }}" alt="" />
     <button (click)="onLogout()">Logout</button>
   </div>

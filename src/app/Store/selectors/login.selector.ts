@@ -19,5 +19,5 @@ export const selectUser = createSelector(
 
 export const selectUserName = createSelector(
   selectAuthState,
-  (state) => state.user.username
+  (state) => state.user.firstName
 );
