@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
     const formData: LoginUser = this.form.getRawValue();
     this.store.dispatch(
       LoginActions.LOGIN_START({
-        LoginUser: {
+        loginUser: {
           username: formData.username,
           password: formData.password,
         },

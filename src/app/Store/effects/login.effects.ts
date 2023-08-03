@@ -9,8 +9,8 @@ export class LoginEffects {
   login$ = createEffect(() =>
     this.actions$.pipe(
       ofType(LoginActions.LOGIN_START),
-      mergeMap(({ LoginUser }) => {
-        return this.authService.login(LoginUser).pipe(
+      mergeMap(({ loginUser }) => {
+        return this.authService.login(loginUser).pipe(
           map((user) => {
             localStorage.setItem('userData', JSON.stringify(user));
             return LoginActions.LOGIN_SUCCESS({ user });
