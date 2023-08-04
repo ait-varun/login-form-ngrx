@@ -78,7 +78,7 @@ export class LoginComponent implements OnInit {
         // .subscribe((value) => { ... }): The subscribe() function is where you define the behavior that will be executed when the observable emits a value that passes through the filtering and taking operations.
         this.loginSuccess = value;
         // (value) => { ... }: This is an arrow function that takes the emitted value from the observable as its argument. In this case, the emitted value will be a truthy value (since it passed through the filter).
-        this.router.navigate(['/home']);
+        this.router.navigate(['/user']);
       });
 
     this.error$
