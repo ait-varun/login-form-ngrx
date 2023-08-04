@@ -18,13 +18,18 @@ export class UsersComponent {
 
   loadData(): void {
     this.apiService.getData().subscribe(
-      (response) => {
-        // Handle the response from the API
-        this.users = response;
-      },
-      (error) => {
-        // Handle errors here if needed
+      {
+        next: (data) => {
+          this.users = data;
+        },
+        error: (err) => {
+          console.log(err);
+        },
+        complete: () => {
+          console.log('complete');
+        }
       }
+
     );
   }
 }

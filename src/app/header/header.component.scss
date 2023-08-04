@@ -7,3 +7,13 @@ ul > li, li > a {
   list-style: none;
   text-decoration: none;
 }
+
+li > a:hover {
+  color: green;
+}
+
+.active{
+  color: red;
+  font-weight: bold;
+  
+}

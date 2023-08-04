@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
 
   constructor(private store: Store) {}
   ngOnInit() {
-    const storedUser = localStorage.getItem('userData');
+    const storedUser : string | null = localStorage.getItem('userData');
     if (storedUser) {
       const user = JSON.parse(storedUser);
       this.store.dispatch(LOGIN_SUCCESS({ user }));
