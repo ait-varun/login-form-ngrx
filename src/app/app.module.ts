@@ -16,9 +16,10 @@ import { LoginEffects } from './Store/effects/login.effects';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from 'src/environments/environment';
 import { UsersComponent } from './users/users.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomepageComponent, UsersComponent],
+  declarations: [AppComponent, LoginComponent, HomepageComponent, UsersComponent, HeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
